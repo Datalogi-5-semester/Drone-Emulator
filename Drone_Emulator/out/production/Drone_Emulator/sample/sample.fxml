@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="675.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <right>
+      <Pane prefHeight="493.0" prefWidth="515.0" BorderPane.alignment="CENTER">
+         <children>
+            <Arc fx:id="droneArc" fill="#1f93ff" layoutX="258.0" layoutY="266.0" length="270.0" radiusX="20.0" radiusY="20.0" startAngle="135.0" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+         </children>
+      </Pane>
+   </right>
+   <left>
+      <BorderPane prefHeight="282.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+         <center>
+              <TableView fx:id="tableViewLog" prefHeight="583.0" prefWidth="263.0" BorderPane.alignment="CENTER">
+                  <columns>
+                      <TableColumn fx:id="logColumnTime" prefWidth="143.77778458595276" text="Time" />
+                      <TableColumn fx:id="logColumnCommand" prefWidth="155.3333282470703" text="Command" />
+                  </columns>
+              </TableView>
+         </center>
+         <bottom>
+            <FlowPane alignment="BOTTOM_RIGHT" prefWidth="800" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" text="Clear Log">
+                     <FlowPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </FlowPane.margin>
+                  </Button>
+               </children>
+            </FlowPane>
+         </bottom>
+      </BorderPane>
+   </left>
+   <top>
+      <FlowPane blendMode="DARKEN" prefHeight="44.0" prefWidth="815.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="44.0" prefWidth="299.0" text="  The Dromedary Drone Emulator">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <ColorPicker fx:id="colorPicker" />
+         </children>
+      </FlowPane>
+   </top>
+</BorderPane>
