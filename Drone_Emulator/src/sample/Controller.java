@@ -33,7 +33,9 @@ public class Controller {
     public Circle droneCircle;
     public Arc droneArc;
     public ColorPicker colorPicker;
-
+    public Button clearLogButton;
+    public TextField speedField;
+    public int speedLabel;
 
 
     Drone drone;
@@ -92,7 +94,7 @@ public class Controller {
         */
 
 
-        //add udp server/reeciver
+        //add udp server/receiver
         receiver = new UdpPackageReceiver(loggedPackages, drone, 6000);
         new Thread(receiver).start();
 
@@ -128,10 +130,10 @@ public class Controller {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
-
     }
 
+    public void clearLog() {
+        loggedPackages.clear();
+    }
 
 }
