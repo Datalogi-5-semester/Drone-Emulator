@@ -40,7 +40,7 @@
    <top>
       <FlowPane blendMode="DARKEN" prefHeight="44.0" prefWidth="815.0" BorderPane.alignment="CENTER">
          <children>
-            <Label prefHeight="44.0" prefWidth="299.0" text="  The Dromedary Drone Emulator">
+            <Label prefHeight="44.0" prefWidth="299.0" text="  The Dromedary sample.Drone Emulator">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
