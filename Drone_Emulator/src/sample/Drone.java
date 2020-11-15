@@ -3,15 +3,15 @@ package sample;
 import javafx.scene.shape.Arc;
 
 public class Drone {
-
     Arc drone;
-    double lat;
+    double height = 20;
     double x;
     double y;
-    int speed;
+    int speed = 0;
+
     boolean onGround = true;
 
-    public Drone(int x, int y, Arc drone) {
+    public Drone(Arc drone) {
         this.x = drone.getLayoutX();
         this.y = drone.getLayoutY();
         this.drone = drone;
@@ -140,33 +140,33 @@ public class Drone {
 
     public void takeOff() {
         if (drone.getRadiusX() == 20) {
-            this.lat = this.lat + 20;
-            drone.setRadiusX(lat);
-            drone.setRadiusY(lat);
+            this.height = this.height + 20;
+            drone.setRadiusX(height);
+            drone.setRadiusY(height);
             onGround = false;
         }
     }
 
     public void heightUp() {
         if (drone.getRadiusX() >= 40) {
-            this.lat = this.lat + 20;
-            drone.setRadiusX(lat);
-            drone.setRadiusY(lat);
+            this.height = this.height + 20;
+            drone.setRadiusX(height);
+            drone.setRadiusY(height);
         }
     }
 
     public void heightDown() {
         if (drone.getRadiusX() >= 40) {
-            this.lat = this.lat - 20;
-            drone.setRadiusX(lat);
-            drone.setRadiusY(lat);
+            this.height = this.height - 20;
+            drone.setRadiusX(height);
+            drone.setRadiusY(height);
         }
     }
 
     public void land() {
         drone.setRadiusX(20);
         drone.setRadiusY(20);
-        lat = drone.getRadiusX();
+        height = drone.getRadiusX();
         onGround = true;
     }
 
@@ -184,5 +184,25 @@ public class Drone {
             if (drone.getStartAngle() == 360)
                 drone.setStartAngle(0);
         }
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public boolean isOnGround() {
+        return onGround;
     }
 }
