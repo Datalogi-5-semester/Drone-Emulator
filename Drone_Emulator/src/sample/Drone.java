@@ -3,13 +3,12 @@ package sample;
 import javafx.scene.shape.Arc;
 
 public class Drone {
-    Arc drone;
-    double height = 20;
-    double x;
-    double y;
-    int speed = 0;
-
-    boolean onGround = true;
+    private Arc drone;
+    private double height = 20;
+    private double x;
+    private double y;
+    private int speed = 0;
+    private boolean onGround = true;
 
     public Drone(Arc drone) {
         this.x = drone.getLayoutX();

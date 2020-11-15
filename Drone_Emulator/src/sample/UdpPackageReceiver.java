@@ -10,7 +10,7 @@ import java.util.List;
 
 public class UdpPackageReceiver implements Runnable {
 
-    boolean running = false;
+    private boolean running = false;
     DatagramSocket socket;
     private byte[] buf = new byte[256];
     int port;
@@ -72,9 +72,9 @@ public class UdpPackageReceiver implements Runnable {
 
         switch (command) {
             case "takeoff" -> drone.takeOff();
+            case "land" -> drone.land();
             case "up" -> drone.heightUp();
             case "down" -> drone.heightDown();
-            case "land" -> drone.land();
             case "faster" -> drone.speedUp();
             case "slower" -> drone.speedDown();
             case "forward" -> drone.goForward();
